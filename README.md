@@ -10,8 +10,8 @@ Tool: Terraform v1.3+ with the `azurerm` provider (~> 3.0)
 
 Design principles:
 
-- Avoid hardcoded secrets — the storage connection string lives in Key Vault, not in code or environment variables
-- Use a managed identity
+Avoid hardcoded secrets : the storage connection string lives in Key Vault, not in code or environment variables
+Use a managed identity
 
 Resource naming convention: All resources use the pattern `<type>-<project>-<environment>`,e.g. `rg-imageapp-dev`. The storage account omits hyphens because Azure does not allow them in storage account names.
 
