@@ -31,7 +31,7 @@ jobs:
           pip install -r requirements.txt -t app/
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip app/ requirements.txt
+        run: zip -r release.zip . -x "*.git*" "venv/*" "__pycache__/*"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
