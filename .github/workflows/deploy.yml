@@ -26,14 +26,12 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install dependencies
-        working-directory: ${{ env.APP_PACKAGE_PATH }}
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt -t .
+          pip install -r requirements.txt -t app/
 
       - name: Zip artifact for deployment
-        working-directory: ${{ env.APP_PACKAGE_PATH }}
-        run: zip -r ../release.zip . -x "*.git*"
+        run: zip -r release.zip app/ requirements.txt
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
