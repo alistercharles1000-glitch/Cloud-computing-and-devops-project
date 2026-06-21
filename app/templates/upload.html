@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Upload — Image Vault{% endblock %}
+{% block content %}
+  <h1>Upload a file</h1>
+  <p class="lede">Choose an image to add it to the storage account.</p>
+
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/*" required
+           style="display:block; margin-bottom: 16px; font-size: 14px;">
+    <button class="button" type="submit">Upload</button>
+  </form>
+
+  <p style="margin-top: 32px;">
+    <a href="{{ url_for('index') }}" style="color: var(--muted); font-size: 14px;">&larr; Back to file list</a>
+  </p>
+{% endblock %}

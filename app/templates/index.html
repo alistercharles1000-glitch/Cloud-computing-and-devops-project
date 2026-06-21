@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %}Files — Image Vault{% endblock %} {%
+block content %}
+<h1>Stored files</h1>
+<p class="lede">Please use this service to upload and download your files.</p>
+
+{% if blobs %}
+<table style="width: 100%; border-collapse: collapse; font-size: 14px">
+  <thead>
+    <tr
+      style="
+        text-align: left;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+      "
+    >
+      <th style="padding: 8px 0">Name</th>
+      <th style="padding: 8px 0">Size</th>
+      <th style="padding: 8px 0"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for blob in blobs %}
+    <tr style="border-bottom: 1px solid var(--line)">
+      <td style="padding: 10px 0">{{ blob.name }}</td>
+      <td style="padding: 10px 0; color: var(--muted)">
+        {{ blob.size_kb }} KB
+      </td>
+      <td style="padding: 10px 0; text-align: right">
+        <a class="button" href="{{ blob.url }}" download>Download</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p style="color: var(--muted)">No files yet. Upload one to get started.</p>
+{% endif %}
+
+<p style="margin-top: 32px">
+  <a class="button" href="{{ url_for('upload') }}">Upload a file</a>
+</p>
+{% endblock %}
