@@ -3,3 +3,9 @@
 terraform.tfstate
 terraform.tfstate.backup
 .terraform.tfstate.lock.info
+# Ignore Python virtual environments and packages
+site-packages/
+antenv/
+venv/
+__pycache__/
+*.pyc
