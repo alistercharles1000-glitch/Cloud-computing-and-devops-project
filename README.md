@@ -55,13 +55,13 @@ imageapp/
 │   ├── variables.tf
 │   ├── main.tf
 │   ├── outputs.tf
-├── app/                             # Part II — Test application
-│   ├── app.py
-│   ├── requirements.txt
-│   └── templates/
-│       ├── base.html
-│       ├── index.html               # Web Page 1 — file list + download links
-│       └── upload.html              # Web Page 2 — upload form
+├                             # Part II — Test application
+│ app.py
+│ requirements.txt
+│ templates/
+│   ├── base.html
+│   ├── index.html               # Web Page 1 — file list + download links
+│   └── upload.html              # Web Page 2 — upload form
 ├── .github/workflows/
 │   └── deploy.yml                   # Build/Deployment Pipeline YAML
 ├── deploy.sh                        # Manual deployment script
