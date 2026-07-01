@@ -46,27 +46,6 @@ The App Service never has direct credentials to the storage account. It authenti
 
 The GitHub Actions pipeline is intentionally scoped to deployment only: its publish-profile credential can push code to the App Service, but has no access to Key Vault or Storage.
 
-## Repository Content (Git)
-
-```
-imageapp/
-├── infra/                          # Part I — Terraform infrastructure
-│   ├── provider.tf
-│   ├── variables.tf
-│   ├── main.tf
-│   ├── outputs.tf
-├── app/                             # Part II — Test application
-│   ├── app.py
-│   ├── requirements.txt
-│   └── templates/
-│       ├── base.html
-│       ├── index.html               # Web Page 1 — file list + download links
-│       └── upload.html              # Web Page 2 — upload form
-├── .github/workflows/
-│   └── deploy.yml                   # Build/Deployment Pipeline YAML
-├── deploy.sh                        # Manual deployment script
-└── README.md
-```
 
 ## Terraform Definition
 
